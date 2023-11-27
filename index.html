@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holy Grail Template with Custom Grid</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FBF5F3;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header, footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    header {
+      background-color: #522B47;
+    }
+
+    main {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .side-nav, .right-side {
+      width: 10%;
+      min-height: 100vh;
+      background-color: #8DAA9D;
+    }
+
+    .main-content {
+      width: 80%;
+      min-height: 100vh;
+      background-color: #e6e6e6;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Custom Grid System */
+    @media (min-width: 768px) {
+      .side-nav, .right-side {
+        width: 15%;
+      }
+
+      .main-content {
+        width: 70%;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .side-nav {
+        width: 10%;
+      }
+
+      .main-content {
+        width: 80%;
+      }
+
+      .right-side {
+        width: 10%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Header</h1>
+    </div>
+  </header>
+
+  <main>
+    <nav class="side-nav">
+      <div class="container">
+        <h4>Side Nav</h4>
+        <!-- Add your navigation content here -->
+      </div>
+    </nav>
+
+    <article class="main-content p-4">
+      <div class="container">
+        <h2>Main Content</h2>
+        <!-- Add your main content here -->
+      </div>
+    </article>
+
+    <aside class="right-side">
+      <div class="container">
+        <h4>Right Side</h4>
+        <!-- Add your aside content here -->
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Footer</p>
+    </div>
+  </footer>
+
+  <script>
+    // JS logic to generate cards
+    document.addEventListener("DOMContentLoaded", function () {
+      const mainContent = document.querySelector(".main-content");
+
+      // Create cards dynamically
+      for (let i = 0; i < 9; i++) {
+        const card = document.createElement("div");
+        card.className = "card custom-card";
+        card.innerHTML = `
+          <div class="card-header">
+            <h3>Cards Here</h3>
+          </div>
+          <div class="card-body">
+            <p class="card-text">A description area goes here.</p>
+            <img src="https://via.placeholder.com/150" alt="Image Placeholder" class="img-fluid">
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Date Stamp</small>
+            <a href="#" class="btn btn-primary float-right"><i class="glyphicon glyphicon-share"></i> Share</a>
+          </div>
+        `;
+        mainContent.appendChild(card);
+      }
+    });
+  </script>
+
+</body>
+</html>
