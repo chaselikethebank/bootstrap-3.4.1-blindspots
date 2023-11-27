@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,12 +14,15 @@
       background-color: #FBF5F3;
     }
 
-    .container {
+    /* Bootstrap Container */
+    .custom-container {
       max-width: 1200px;
       margin: 0 auto;
     }
 
-    header, footer {
+    /* Bootstrap Header and Footer Styling */
+    header,
+    footer {
       background-color: #333;
       color: #fff;
       text-align: center;
@@ -29,34 +33,60 @@
       background-color: #522B47;
     }
 
+    /* Bootstrap Main Styling */
     main {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      margin: 20px 0;
+      margin: auto;
     }
 
-    .side-nav, .right-side {
+    /* Bootstrap Side Nav Styling */
+    .side-nav,
+    .right-side {
       width: 10%;
       min-height: 100vh;
       background-color: #8DAA9D;
     }
 
+    /* Bootstrap Main Content Styling */
     .main-content {
       width: 80%;
       min-height: 100vh;
       background-color: #e6e6e6;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
     }
 
+    .main-content h2 {
+      width: 100%;
+      /* Ensure the header takes full width */
+      text-align: center;
+      /* Center the header text */
+    }
+
+    /* Bootstrap Footer Positioning */
     footer {
       position: fixed;
       bottom: 0;
       width: 100%;
     }
 
-    /* Custom Grid System */
+    .vert-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    /* Bootstrap Custom Grid System */
     @media (min-width: 768px) {
-      .side-nav, .right-side {
+
+      .side-nav,
+      .right-side {
         width: 15%;
       }
 
@@ -80,43 +110,50 @@
     }
   </style>
 </head>
+
 <body>
 
   <header>
-    <div class="container">
+    <div class="custom-container">
       <h1>Header</h1>
     </div>
   </header>
-
+<!-- end header nav -->
+<!-- main body section starts -->
   <main>
-    <nav class="side-nav">
-      <div class="container">
+    <nav class="side-nav custom-container">
+      <div class="vert-center">
+
         <h4>Side Nav</h4>
-        <!-- Add your navigation content here -->
-      </div>
+        </div>
     </nav>
 
     <article class="main-content p-4">
-      <div class="container">
-        <h2>Main Content</h2>
-        <!-- Add your main content here -->
+      <h2>Main Content</h2>
+
+      <div class="custom-container">
       </div>
     </article>
-
-    <aside class="right-side">
-      <div class="container">
+    
+    <aside class="custom-container right-side">
+      <div class="vert-center">
         <h4>Right Side</h4>
-        <!-- Add your aside content here -->
       </div>
     </aside>
   </main>
 
+<!-- end main body section -->
+
+<!-- start the footer -->
   <footer>
-    <div class="container">
+    <div class="custom-container">
       <p>Footer</p>
     </div>
   </footer>
 
+<!-- end the footer section -->
+
+<!-- js script starts -->
   <script>
     // JS logic to generate cards
     document.addEventListener("DOMContentLoaded", function () {
@@ -128,13 +165,13 @@
         card.className = "card custom-card";
         card.innerHTML = `
           <div class="card-header">
-            <h3>Cards Here</h3>
+            <h3>Cards Title</h3>
           </div>
-          <div class="card-body">
+          <div class="card-body p-3">
             <p class="card-text">A description area goes here.</p>
             <img src="https://via.placeholder.com/150" alt="Image Placeholder" class="img-fluid">
           </div>
-          <div class="card-footer">
+          <div class="card-footer p-4">
             <small class="text-muted">Date Stamp</small>
             <a href="#" class="btn btn-primary float-right"><i class="glyphicon glyphicon-share"></i> Share</a>
           </div>
@@ -145,4 +182,5 @@
   </script>
 
 </body>
+
 </html>
